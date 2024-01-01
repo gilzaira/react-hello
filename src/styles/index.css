@@ -10,12 +10,45 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+#footer{
+  margin-left: -30px;
+  margin-right: -30px;
+  width: calc(100% + 60px);
+  box-sizing: border-box; 
+ }
+ 
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 20px 50px 20px;
+}
 
+.border {
+  border: 1px solid rgb(135, 135, 135) !important;
+}
+.border:focus {
+  border: 2px solid rgb(200, 150, 50) !important;
+}
+.navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+.nav-link {
+  font-weight:bolder ;
+}
 .nav-link:focus {
   font-weight: bolder;
+  color:rgb(242, 245, 242) !important;
  };
 
- 
+
+
+
+/* styles.css */
+
+
+
+
 
 
 

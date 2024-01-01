@@ -1,50 +1,58 @@
 import React from "react";
-import littleCat from '../../img/littleCat.jpg';
+
 //create your first component
 
-
-const cardData = [
-  {
-    id: 1,
-    imageUrl: 'https://picsum.photos/seed/picsum/50/50',
-    title: 'Card 1',
-    content: 'This is the content for Card 1.',
-  },
-  {
-    id: 2,
-    imageUrl: 'https://example.com/image2.jpg',
-    title: 'Card 2',
-    content: 'This is the content for Card 2.',
-  },
-  {
-    id: 3,
-    imageUrl: 'https://example.com/image3.jpg',
-    title: 'Card 3',
-    content: 'This is the content for Card 3.',
-  },
-  {
-    id: 4,
-    imageUrl: 'https://example.com/image4.jpg',
-    title: 'Card 4',
-    content: 'This is the content for Card 4.',
-  },
-];
-
-const Card = () => {
+const CardList = () => {
+  const cardData = [
+    {
+      id: 1,
+      imageUrl: 'https://picsum.photos/500/325?random=1',
+      title: 'Soren Kierkegaard',
+      content: 'Life is not a problem to be solved, but a reality to be experienced.',
+    },
+    {
+      id: 2,
+      imageUrl: 'https://picsum.photos/500/325?random=2',
+      title: 'Dalai Lama',
+      content: 'Take into account that great love and great achievements involve great risk.',
+    },
+    {
+      id: 3,
+      imageUrl: 'https://picsum.photos/500/325?random=3',
+      title: 'Lou Holtz',
+      content: 'Life is ten per cent what happens to you and ninety per cent how you respond to it.',
+    },
+    {
+      id: 4,
+      imageUrl: 'https://picsum.photos/500/325?random=4',
+      title: 'Mark Twain',
+      content: 'The two most important days in your life are the day you are born and the day you find out why.',
+    },
+  ];
   return (
-    <div className="card-group">
+    <div className="row card-group">
       {cardData.map((card) => (
-        <div className="card" key={card.id}>
-          <img className="card-img-top" src={card.imageUrl} alt={`Image for ${card.title}`} />
-          <div className="card-body">
-            <h5 className="card-title">{card.title}</h5>
-            <p className="card-text">{card.content}</p>
-            <a href="#" className="btn btn-primary">Learn More</a>
-          </div>
-        </div>
+        <Card key={card.id} {...card} />
       ))}
     </div>
   );
 };
 
-export default Card;
+const Card = ({ id, imageUrl, title, content }) => {
+  return (
+    <div className="col-md-3 mb-3">
+      <div className="rounded card border-light-subtle text-center h-100" key={id}>
+        <img className="card-img-top img-fluid m-0 p-0 rounded-top" src={imageUrl} alt={`Image for ${title}`} style={{ maxWidth: '100%', maxHeight: '100%' }} />
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{content}</p>
+        </div>
+        <div className="card-footer bg-transparent">
+          <a href="#" className="btn btn-primary fw-semibold">Find Out More!</a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CardList;

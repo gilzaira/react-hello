@@ -5,15 +5,13 @@ import React from "react";
 //create your first component
 const Sectiontop = () => {
     return (
-        <div className="">
-            <div className="container-fluid">
-                <a className="" href="#">Top Section</a>
-                <h3>A warm welcome</h3>
-                <p>todo lo de dentro</p>
-                <button>
-                    el boton
-                </button>
-            </div>
+        <div className="container-fluid alert alert-secondary py-5 px-4 mb-3">
+            <h1 className="">A Warm Welcome</h1>
+            <p className="">"It's not enough to learn how to ride, you must also learn how to fall.” It's a Mexican proverb
+                about life, acceptance, and viewing failure and success in any venture as two sides of the same coin. Being a gracious loser requires a set of skills as important as those needed for being a gracious winner—and you may wind up using them more frequently!</p>
+            <button className="d-inline btn btn-primary" href="#">
+                Call to action!
+            </button>
         </div>
     );
 };
